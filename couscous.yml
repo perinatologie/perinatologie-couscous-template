@@ -14,7 +14,7 @@ menu:
         home:
             text: Introduction
             # You can use relative urls
-            relativeUrl: /
+            relativeUrl: ./
         demo:
             text: Demo
         license:
