@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>couscous template</title>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/monokai-sublime.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand navbar-right hidden-xs" href="https://doc.perinatologie.nl">
+                <img src="https://www.perinatologie.nl/assets/img/perinatologie.nl.png" style="width: 40px; float: left; margin-right: 5px;" />
+                doc.perinatologie.nl
+            </a>
+            <a class="navbar-brand" href="/">
+                couscous template
+                <small class="hidden-xs hidden-sm">
+                    a reusable template for documentation
+                </small>
+            </a>
+        </header>
+
+        <main class="container-fluid">
+            <div class="row">
+
+                
+                    <nav id="sidebar" class="col-sm-3 col-lg-2" role="navigation">
+
+                        <ul class="nav nav-pills nav-stacked">
+                                                            <li class="active">
+                                                                                                                        <a href="/">
+                                                                                                                    Introduction
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                                                                                                        <a href="demo.html">
+                                                                                                                    Demo
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                                                                                                        <a href="license.html">
+                                                                                                                    License
+                                    </a>
+                                </li>
+                                                            <li class="">
+                                                                            <a href="https://www.perinatologie.nl">
+                                                                            www.perinatologie.nl
+                                    </a>
+                                </li>
+                                                    </ul>
+
+                    </nav>
+
+                
+                <section id="content" class="col-sm-offset-3 col-lg-offset-2 col-sm-9 col-lg-10">
+                   <h1 id="perinatologienl-couscous-template">perinatologie.nl couscous template</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Documentation on perinatologie.nl is written in markdown, version controlled on github, and published to static HTML through <a href="http://couscous.io/">couscous</a>.</p>
+<p>This repository contains a reusable template for perinatologie.nl documentation</p>
+<ul>
+<li><a href="http://couscous.io">couscous.io</a></li>
+<li><a href="http://couscous.io/docs/getting-started.html">couscous getting started</a></li>
+</ul>
+<h2 id="usage-in-external-documents">Usage in external documents</h2>
+<p>To use the template, set it up in your <code>couscous.yml</code> configuration file:</p>
+<pre><code class="language-yaml">template:
+    url: https://github.com/perinatologie/perinatologie-couscous-template</code></pre>
+<h2 id="configuration">Configuration</h2>
+<p>Here are all the variables you can set in your <code>couscous.yml</code>:</p>
+<pre><code class="language-yaml"># Base URL of the published website
+baseUrl: http://username.github.io/project
+
+# Used to link to the GitHub project
+github:
+    user: myself
+    repo: my-project
+
+title: My project
+subTitle: This is a great project.
+
+# The left menu bar
+menu:
+    items:
+        home:
+            text: Home page
+            # You can use relative urls
+            relativeUrl: doc/faq.html
+        foo:
+            text: Another link
+            # Or absolute urls
+            absoluteUrl: https://example.com</code></pre>
+<p>Note that the menu items can also contain HTML:</p>
+<pre><code class="language-yaml">home:
+    text: "&lt;i class=\"fa fa-github\"&gt;&lt;/i&gt; Home page"
+    relativeUrl: doc/faq.html</code></pre>
+<h2 id="menu">Menu</h2>
+<p>To set the current menu item (i.e. highlighted menu item), set the <code>currentMenu</code>
+key in the Markdown files:</p>
+<pre><code class="language-markdown">---
+currentMenu: home
+---
+
+# Welcome</code></pre>
+<h2 id="preview">Preview</h2>
+<p>This template can be previewed inline. Simply install couscous, and run:</p>
+<pre><code>couscous preview</code></pre>
+<p>Now point your browser to <a href="http://localhost:8000">http://localhost:8000</a></p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container-fluid">
+                <p class="text-muted">
+                    <a href="https://www.perinatologie.nl">perinatologie.nl</a>
+                </p>
+            </div>
+
+                            <a class="github-link" href="https://github.com/perinatologie/perinatologie-couscous-template">
+                    <i class="fa fa-github"></i>
+                    Dit document is open-source, bijdragen kan via github.
+                </a>
+            
+        </footer>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yastatic.net/highlightjs/8.2/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
