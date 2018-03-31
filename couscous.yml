@@ -7,7 +7,6 @@ github:
 
 title: couscous template
 subTitle: a reusable template for documentation
-baseUrl: ''
 
 # The left menu bar
 menu:

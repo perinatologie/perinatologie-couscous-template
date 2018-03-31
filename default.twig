@@ -6,10 +6,10 @@
 
         <title>{{ title }}</title>
 
-        <link rel="stylesheet" href="{{ baseUrl }}/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{{ baseUrl }}/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{{ baseUrl }}/css/monokai-sublime.css">
-        <link rel="stylesheet" href="{{ baseUrl }}/css/main.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/monokai-sublime.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
 
@@ -19,7 +19,7 @@
                 <img src="https://www.perinatologie.nl/assets/img/perinatologie.nl.png" style="width: 40px; float: left; margin-right: 5px;" />
                 doc.perinatologie.nl
             </a>
-            <a class="navbar-brand" href="{{ baseUrl }}/">
+            <a class="navbar-brand" href="./">
                 {{ title|default('Default title') }}
                 <small class="hidden-xs hidden-sm">
                     {{ subTitle|default('Default subtitle') }}
@@ -41,9 +41,9 @@
                                         <a href="{{ item.absoluteUrl }}">
                                     {% else %}
                                         {% if item.relativeUrl %}
-                                            <a href="{{ baseUrl ~ item.relativeUrl }}">
+                                            <a href="{{ item.relativeUrl }}">
                                         {% else %}
-                                            <a href="{{ baseUrl ~ itemId ~ '.html' }}">
+                                            <a href="{{ itemId ~ '.html' }}">
                                         {% endif %}
                                     {% endif %}
                                         {{ item.text|raw }}
